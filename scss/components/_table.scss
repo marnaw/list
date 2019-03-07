@@ -1,0 +1,176 @@
+/* components/table */
+.table {
+  display: flex;
+  flex-direction: column;
+  width: $tableWidth;
+  align-items: center;
+
+  // rwd desktop table
+  @include desktop {
+    width: 1170px;
+  }
+
+  .header {
+    display: none;
+
+    // rwd phone header
+    @include phoneMedium {
+      display: flex;
+      width: $tableWidthContent;
+      justify-content: space-between;
+      background-color: black;
+      padding: 20px 0px 20px 10px;
+      width: 100%;
+    }
+
+    &__item {
+      display: flex;
+
+      @include phoneMedium {
+        justify-content: center;
+        width: 33%;
+        padding-left: 0px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 12px;
+
+      }
+    }
+  }
+
+  .table__rows {
+    display: flex;
+    flex-direction: column;
+    width: $tableWidthContent;
+
+  }
+
+  .table-content {
+    margin-top: $spaceRow;
+
+    @include phoneMedium {
+      margin-top: 0;
+    }
+
+    &--color {
+      @include boxShadowTable();
+
+      @include phoneMedium {
+        box-shadow: none;
+      }
+    }
+
+    @include phoneMedium {
+      &--color:nth-child(even) {
+        background-color: #EEEEEE;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      right: 0;
+      top: 0;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+
+      @include phoneMedium {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        @include rowCentreTable(15px);
+      }
+
+      @include rowCentreTable(10px); //padding argument for row
+
+    }
+
+    &__delete-icon {
+      position: absolute;
+      top: -$fontSize/2;
+      right: -$fontSize/2;
+      color: $red;
+      font-size: 18px;
+      cursor: pointer;
+
+      @include phoneMedium {
+        top: 50%;
+        right: $fontSize/2;
+        transform: translateY(-50%)
+      }
+
+
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      color: $colorPrimaryFont;
+      margin: 5px 0 0 30px;
+      max-width: 90%;
+      font-size: 13px;
+
+      @include phoneMedium {
+
+        width: 33%;
+        justify-content: center;
+
+        &:first-of-type {
+          margin-left: 5px;
+        }
+
+      }
+
+      &::before {
+        @include phoneMedium {
+          display: none;
+        }
+
+        font-weight: 700;
+        text-align: right;
+        font-size: 12px;
+        color: $colorPrimaryFont;
+        line-height: 1.2;
+        text-transform: uppercase;
+        content: attr(data-title);
+        min-width: 98px;
+        display: block;
+        margin-right: 10px;
+        align-self: center;
+      }
+    }
+  }
+
+  .table-footer {
+    width: $tableWidthContent;
+    @include rowCentreTable(10px); //padding argument for row
+    margin-top: $spaceRow;
+    @include boxShadowTable();
+    display: none;
+
+
+    @include phoneMedium {
+      box-shadow: none;
+      display: none;
+      justify-content: flex-end;
+
+    }
+
+    &__item {
+      margin: 0 auto;
+      text-align: center;
+
+      @include phoneMedium {
+        padding: 15px 10px;
+        @include boxShadowTable();
+        width: 40%;
+        background-color: #eee;
+      }
+    }
+  }
+}

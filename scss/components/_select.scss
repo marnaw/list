@@ -1,0 +1,70 @@
+.choice-cashier {
+  position: relative;
+  left: 0;
+  top: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  @include card(20px, 250px, 170px);
+  @include boxShadowTable;
+
+  &__focus-border {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3399FF;
+
+  }
+
+  &:focus~.choice-cashier__focus-border {
+    width: 100%;
+    transition: 0.4s;
+
+  }
+
+  @include tablet {
+    align-self: flex-start;
+    @include card(20px, 230px, 200px);
+  }
+
+  @include desktop {
+    @include card(20px, 350px, 200px);
+
+  }
+
+  &__select {
+    align-self: center;
+    width: 150px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 7px 0 7px 10px;
+
+    outline: transparent;
+
+
+  }
+
+  &__option {
+    background-color: transparent;
+    outline: transparent;
+    border: 1px solid black;
+
+  }
+
+  &__input {
+    margin-top: 30px;
+    width: 150px;
+    height: 30px;
+    align-self: center;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+
+
+  }
+
+}

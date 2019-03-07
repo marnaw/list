@@ -1,0 +1,37 @@
+@mixin rowCentreTable ($padding) {
+  padding: $padding;
+  margin: 0 auto;
+}
+
+@mixin boxShadowTable {
+  // box-shadow: 0 0px 2px 1px $colorShadow;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.32), 0 3px 1px -2px rgba(0, 0, 0, .19);
+}
+
+@mixin phoneMedium {
+  @media (min-width: #{$phoneMedium-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+
+}
+
+@mixin card($padding, $width, $height) {
+  padding: $padding;
+  text-align: center;
+  width: $width;
+  height: $height;
+
+}

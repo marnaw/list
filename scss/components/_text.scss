@@ -1,0 +1,10 @@
+.footer {
+  &__text {
+    text-align: center;
+    font-weight: 500;
+
+    &--small {
+      font-size: $fontSize*0.6;
+    }
+  }
+}

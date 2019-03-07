@@ -1,0 +1,32 @@
+.btn {
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  border: none;
+  color: white;
+  outline: transparent;
+  text-decoration: none;
+  text-align: center;
+  font-family: $fontPrimary;
+  transition: .2s;
+  cursor: pointer;
+
+  &--small {
+    padding: 8px 10px;
+  }
+
+  &--medium {
+    padding: 12px 20px;
+  }
+
+  &--large {
+    padding: 15px 30px;
+  }
+
+  &--color-gray {
+    background-color: #424242;
+  }
+
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+}

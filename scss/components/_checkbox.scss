@@ -1,0 +1,45 @@
+.checkbox {
+  list-style: none;
+  width: 100%;
+
+  &__wrapper {
+    width: 130px;
+    margin: 0 auto;
+
+    @include phoneMedium {
+      display: flex;
+      justify-content: center;
+      width: 500px;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+    @include phoneMedium {
+      margin-right: 5px;
+    }
+
+    @include tablet {
+      margin-right: 15px;
+    }
+
+  }
+
+  &__label {
+    font-size: 13px;
+    letter-spacing: .5px;
+    margin: 0 0 0 5px;
+
+    @include tablet {
+      font-size: 17px;
+    }
+
+  }
+}

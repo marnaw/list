@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>System dodawania kart płatniczych</title>
+</head>
+
+<body>
+    <header class="header-main">
+        <h1 class="heading heading--large heading--centre">System dodawania kart płatniczych</h1>
+    </header>
+    <div class="container">
+
+        <div class="box">
+            <div class="choice-cashier">
+                <label for="select-cashier" class="choice-cashier__label">
+                    <h2 class="heading heading--medium">Wybierz kasjera</h2>
+                </label>
+                <select class="choice-cashier__select" id="select-cashier">
+                    <option class="choice-cashier__option" value="Marcin">Marcin</option>
+                    <option class="choice-cashier__option" value="Danuta">Danuta</option>
+                    <option class="choice-cashier__option" value="Krzysztof">Krzysztof</option>
+                    <option class="choice-cashier__option" value="Dominik">Dominik</option>
+                    <option class="choice-cashier__option" value="Andrzej">Andrzej</option>
+                </select>
+                <input autocomplete="off" class="choice-cashier__input" type="number" placeholder="Szukaj kwoty" id="search">
+                <span class="choice-cashier__focus-border"></span>
+            </div>
+            <div class="card">
+                <h2 class="heading heading--medium">Dodaj kartę płatniczą</h2>
+                <div class="card-add">
+                    <input class="card-add__input card-add__input--top" id="id-payment" type="number" placeholder="Wpisz numer transakcji">
+                    <span class="card-add__focus-border"></span>
+
+                </div>
+                <div class="card-add">
+                    <input class="card-add__input card-add__input--top" id="amount" type="number" placeholder="Wpisz kwotę">
+                    <span class="card-add__focus-border"></span>
+                </div>
+                <div class="card__btn">
+                    <button class="btn btn--small btn--color-gray" id="btnAdd">Dodaj</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="table">
+            <header class="header">
+                <div class="header__item">godzina</div>
+                <div class="header__item">numer płatności</div>
+                <div class="header__item">kwota</div>
+            </header>
+            <section class="table__rows" id="table-content">
+
+            </section>
+
+            <footer class="table-footer">
+                <div class="table-footer__item" id="sum-amount">
+
+                </div>
+            </footer>
+        </div>
+        <ul class="checkbox checkbox--top">
+            <h3 class="heading heading--medium heading--centre">Usuń z druku</h3>
+            <div class="checkbox__wrapper">
+                <li class="checkbox__item">
+                    <input class="checkbox__input" type="checkbox" name="cashier" id="checkbox_1">
+                    <label class="checkbox__label" for="checkbox_1">Kasjer</label>
+                </li>
+                <li class="checkbox__item">
+                    <input class="checkbox__input" type="checkbox" name="data" id="checkbox_2">
+                    <label class="checkbox__label" for="checkbox_2">Data</label>
+                </li>
+                <li class="checkbox__item">
+                    <input class="checkbox__input" type="checkbox" name="quantity" id="checkbox_3">
+                    <label class="checkbox__label" for="checkbox_3">Ilość rachunków</label>
+                </li>
+                <li class="checkbox__item">
+                    <input class="checkbox__input" type="checkbox" name="suma" id="checkbox_4">
+                    <label class="checkbox__label" for="checkbox_4">Suma</label>
+                </li>
+            </div>
+        </ul>
+
+        <section class="action">
+            <div class="action__wrapper">
+                <button class="btn btn--small btn--color-gray" id="print">drukuj</button>
+                <button class="btn btn--small btn--color-gray" id="deleteAll">wyczyść wszystko</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p class="footer__text footer__text--small">Aplikacja stworzona przez Marcin Nawara. Kontakt
+            marcinnawara@int.pl</p>
+    </footer>
+    <script src="js/card.js"></script>
+</body>
+
+</html>
