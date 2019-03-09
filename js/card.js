@@ -7,7 +7,7 @@ class Cards {
     this.tbody = document.querySelector('#table-content');
     this.cashier = document.getElementById('select-cashier');
     this.sum = document.querySelector('#sum-amount');
-    this.date = new Date();
+    this.date = null;
     document.querySelector('#search').addEventListener('input', this.searchCards.bind(this))
     document.querySelector('#print').addEventListener('click', this.printTable.bind(this));
     this.checkForm(this.inputId, this.inputAmount, this.btn, 'Błąd! Wpisz numer płatnośći!', 'Błąd! Wpisz kwotę!')
@@ -88,6 +88,7 @@ class Cards {
 
   }
   getDate() {
+    this.date = new Date(); //get actual time
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;
     let hour = this.date.getHours();
